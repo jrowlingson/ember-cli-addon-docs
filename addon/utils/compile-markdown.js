@@ -135,7 +135,7 @@ function compactParagraphs(tokens) {
 
     balance += count(/{{#/g, textWithoutCode);
     balance += count(/<[A-Z]/g, textWithoutCode);
-    balance -= count(/[A-Z][^<>]+\//g, textWithoutCode);
+    balance -= count(/[A-Z][^<>]+\/>/g, textWithoutCode);
     balance -= count(/{{\//g, textWithoutCode);
     balance -= count(/<\/[A-Z]/g, textWithoutCode);
   }
