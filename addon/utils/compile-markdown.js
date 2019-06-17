@@ -134,7 +134,8 @@ function compactParagraphs(tokens) {
     let textWithoutCode = tokenText.replace(/`[\s\S]*?`/g, '');
 
     balance += count(/{{#/g, textWithoutCode);
-    balance += count(/<[A-Z][^/^>]+>/g, textWithoutCode);
+    balance += count(/<[A-Z]/g, textWithoutCode);
+    balance -= count(/[A-Z][^<>]+\//g, textWithoutCode);
     balance -= count(/{{\//g, textWithoutCode);
     balance -= count(/<\/[A-Z]/g, textWithoutCode);
   }
